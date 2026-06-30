@@ -1,5 +1,5 @@
 {
-  "name": "@redeyed/sentinel-react",
+  "name": "@redeyed_/sentinel-react",
   "version": "1.0.0",
   "description": "React component for the Redeyed Sentinel CAPTCHA — free, privacy-friendly bot detection.",
   "license": "MIT",
@@ -14,11 +14,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redeyed/sentinel-react.git"
+    "url": "git+https://github.com/bruted/sentinel-react.git"
   },
   "homepage": "https://redeyed.com/developers",
   "bugs": {
-    "url": "https://github.com/redeyed/sentinel-react/issues"
+    "url": "https://github.com/bruted/sentinel-react/issues"
   },
   "keywords": [
     "redeyed",

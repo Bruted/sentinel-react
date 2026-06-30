@@ -1,4 +1,4 @@
-# @redeyed/sentinel-react
+# @redeyed_/sentinel-react
 
 React component for the **Redeyed Sentinel** CAPTCHA — privacy-friendly bot
 detection that's **free to use** (you just need a free site key + API key).
@@ -8,7 +8,7 @@ Get your keys at **<https://redeyed.com/developers>**.
 ## Install
 
 ```bash
-npm i @redeyed/sentinel-react
+npm i @redeyed_/sentinel-react
 ```
 
 > This package ships TypeScript/TSX source under `src/`. Most bundlers
@@ -20,7 +20,7 @@ npm i @redeyed/sentinel-react
 
 ```tsx
 import { useState } from "react";
-import { SentinelCaptcha } from "@redeyed/sentinel-react";
+import { SentinelCaptcha } from "@redeyed_/sentinel-react";
 
 export function SignupForm() {
   const [token, setToken] = useState<string | null>(null);
@@ -56,7 +56,7 @@ export function SignupForm() {
 If you'd rather pull the token from a hook than wire `onVerify`:
 
 ```tsx
-import { SentinelCaptcha, useSentinelToken } from "@redeyed/sentinel-react";
+import { SentinelCaptcha, useSentinelToken } from "@redeyed_/sentinel-react";
 
 function Widget() {
   const token = useSentinelToken(); // latest token solved on the page
@@ -95,7 +95,7 @@ Accept: application/json
 The check **passes** when the JSON response has `data.success === true`
 (or top-level `success === true`).
 
-> Using Next.js? `@redeyed/sentinel-nextjs` ships a ready-made `verifySentinel()`
+> Using Next.js? `@redeyed_/sentinel-nextjs` ships a ready-made `verifySentinel()`
 > server helper.
 
 ## License

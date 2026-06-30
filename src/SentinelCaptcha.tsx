@@ -97,7 +97,7 @@ export function SentinelCaptcha(props: SentinelCaptchaProps) {
   if (!siteKey) {
     // eslint-disable-next-line no-console
     console.warn(
-      "[@redeyed/sentinel-react] `siteKey` is required — rendering nothing. " +
+      "[@redeyed_/sentinel-react] `siteKey` is required — rendering nothing. " +
         "Get a free key at https://redeyed.com/developers"
     );
     return null;
