@@ -1,7 +1,7 @@
 # @redeyed_/sentinel-react
 
 React component for the **Redeyed Sentinel** CAPTCHA — privacy-friendly bot
-detection that's **free to use** (you just need a free site key + API key).
+detection that's **free to use** (you just need a free Site Key + Secret Key).
 
 Get your keys at **<https://redeyed.com/developers>**.
 
@@ -27,7 +27,7 @@ export function SignupForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // Send the token to YOUR server, which verifies it with your secret API key.
+    // Send the token to YOUR server, which verifies it with your Secret Key.
     await fetch("/api/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -80,20 +80,23 @@ function Widget() {
 ## Verifying on your server (required)
 
 The token from `onVerify` only proves the widget was solved in the browser —
-you **must** verify it server-side. **Your API key is secret and must never be
+you **must** verify it server-side. **Your Secret Key is secret and must never be
 shipped to the browser.**
 
 ```http
-POST https://redeyed.com/api/v1/verify
-X-Api-Key: <YOUR_SECRET_API_KEY>
+POST https://redeyed.com/sentinel/siteverify
 Content-Type: application/json
 Accept: application/json
 
-{ "site_key": "<YOUR_SITE_KEY>", "token": "<token-from-onVerify>" }
+{ "secret": "<YOUR_SECRET_KEY>", "response": "<token-from-onVerify>" }
 ```
 
-The check **passes** when the JSON response has `data.success === true`
-(or top-level `success === true`).
+You may also include an optional `"remoteip"` field with the end user's IP. The
+check **passes** when the JSON response has `success === true`; the response also
+carries `outcome` and `score`.
+
+Both keys come from the **Redeyed Lab → Sentinel → Sites**. The Secret Key is
+shown once and stays server-side.
 
 > Using Next.js? `@redeyed_/sentinel-nextjs` ships a ready-made `verifySentinel()`
 > server helper.
