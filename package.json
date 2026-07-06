@@ -1,6 +1,6 @@
 {
   "name": "@redeyed_/sentinel-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component for the Redeyed Sentinel CAPTCHA — free, privacy-friendly bot detection.",
   "license": "MIT",
   "author": "Redeyed Corporation <dev@redeyed.com>",
